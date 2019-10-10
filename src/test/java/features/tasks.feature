@@ -2,7 +2,7 @@
 
 @tag
 Feature: Mytheresa Technical QA search feature
-  I want to use this template for my feature file
+  This Feature file is used to test the search feature in web Browser and API
 
   @tag1
   Scenario Outline: Search Feature in UI and API
