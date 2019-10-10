@@ -23,7 +23,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 	@BeforeClass
 	public static void setUp() {
 
-		final String chromeDriverPath = "..\\mytheresaProject\\resources\\";
+		final String chromeDriverPath = "..\\myTheresa\\resources\\";
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath + "chromedriver.exe");
 		objDriver = new ChromeDriver();
 		

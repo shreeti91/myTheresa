@@ -39,6 +39,7 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
@@ -52,7 +53,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Oct 10, 2019 05:27:44 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Oct 10, 2019 06:52:45 PM</span>
 				</a>
 			</li>
 			<li>
@@ -78,6 +79,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -139,10 +141,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -154,10 +156,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>1</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='50%'>1</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -169,10 +171,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>5</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='90%'><span class='strong'>9</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='10%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -186,15 +188,15 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Mytheresa Technical QA search feature</span>
-						<span class='test-time'>Oct 10, 2019 05:27:44 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Oct 10, 2019 06:52:46 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenariooutline node' test-id='2' status='pass'>
-	<span class='duration right label'>0h 0m 19s+211ms</span>
+<div class='scenariooutline node' test-id='2' status='fail'>
+	<span class='duration right label'>0h 0m 24s+563ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
 		<span class="desc-text">Search Feature in UI and API</span>
@@ -230,6 +232,45 @@
 					<li test-id='8' class='node then pass' status='pass'><b>Then</b>
 						<span class="bdd-step-name">Then searchString and searchCount should match with previous search</span>
 							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='9' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Search Feature in UI and API</span>
+			
+				<ul class='steps'>
+					<li test-id='10' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given launch "https:\www.food2fork.com"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='11' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When search for "roasted chicken"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='12' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then verify the searchStatus for "roasted chicken"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='13' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When tested "roasted chicken" with API URL</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='14' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then searchString and searchCount should match with previous search</span>
+							<div class='pre'><pre>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at stepDefinitions.homepage_tests.searchstring_and_searchCount_should_match_with_previous_search(homepage_tests.java:144)
+	at ?.Then searchString and searchCount should match with previous search(tasks.feature:13)
+</pre></div>
 					</li>
 				</ul>
 		</li>
@@ -291,13 +332,14 @@
 					<div class='category-heading'>
 						<span class='category-name'>@tag</span>
 						<span class='category-status right'>
-							<span class='label pass'>2</span>
+							<span class='label pass'>1</span>
+							<span class='label fail'>2</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 2</span>
-							
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							<span class='label red lighten-1 white-text'>Failed: 2</span>
 							
 						</div>
 					
@@ -312,14 +354,19 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Oct 10, 2019 05:27:44 PM</td>
+										<td>Oct 10, 2019 06:52:46 PM</td>
 										<td class='linked' test-id='1'>Mytheresa Technical QA search feature</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Oct 10, 2019 06:52:46 PM</td>
+										<td class='linked' test-id='3'>Mytheresa Technical QA search feature.Search Feature in UI and API.Search Feature in UI and API</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Oct 10, 2019 05:27:44 PM</td>
-										<td class='linked' test-id='3'>Mytheresa Technical QA search feature.Search Feature in UI and API.Search Feature in UI and API</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td>Oct 10, 2019 06:53:02 PM</td>
+										<td class='linked' test-id='9'>Mytheresa Technical QA search feature.Search Feature in UI and API.Search Feature in UI and API</td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -331,12 +378,13 @@
 						<span class='category-name'>@tag1</span>
 						<span class='category-status right'>
 							<span class='label pass'>1</span>
+							<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
 							<span class='label green accent-4 white-text'>Passed: 1</span>
-							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -351,9 +399,14 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Oct 10, 2019 05:27:44 PM</td>
+										<td>Oct 10, 2019 06:52:46 PM</td>
 										<td class='linked' test-id='3'>Mytheresa Technical QA search feature.Search Feature in UI and API.Search Feature in UI and API</td>
 										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Oct 10, 2019 06:53:02 PM</td>
+										<td class='linked' test-id='9'>Mytheresa Technical QA search feature.Search Feature in UI and API.Search Feature in UI and API</td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -372,6 +425,73 @@
 	</div>
 </div>
 <!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>java.lang.AssertionError</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Oct 10, 2019 06:53:10 PM</td>
+                                                        <td class='linked' test-id='14'>Mytheresa Technical QA search feature.Search Feature in UI and API.Search Feature in UI and API.Then searchString and searchCount should match with previous search</td>
+                                                        <td><pre><pre>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at stepDefinitions.homepage_tests.searchstring_and_searchCount_should_match_with_previous_search(homepage_tests.java:144)
+	at ?.Then searchString and searchCount should match with previous search(tasks.feature:13)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -387,31 +507,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>2</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>5</div>
+					<div class='panel-lead'>10</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Oct 10, 2019 05:27:44 PM</div>
+					<div class='panel-lead'>Oct 10, 2019 06:52:45 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Oct 10, 2019 05:28:03 PM</div>
+			 		<div class='panel-lead'>Oct 10, 2019 06:53:10 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>19,539ms</div>
+					<div class='panel-lead'>24,847ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -428,20 +548,20 @@
 						</tr>
 						<tr>
 							<td>@tag</td>
+							<td>1</td>
 							<td>2</td>
 							<td>0</td>
-							<td>0</td>
 							<td>
-									100%
+									33.333%
 							</td>
 						</tr>
 						<tr>
 							<td>@tag1</td>
 							<td>1</td>
-							<td>0</td>
+							<td>1</td>
 							<td>0</td>
 							<td>
-									100%
+									50%
 							</td>
 						</tr>
 					</table>
@@ -457,31 +577,31 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
-				failParent: 0,
+				passParent: 0,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 1,
 				
 				passChild: 1,
-				failChild: 0,
+				failChild: 1,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 0,
+				exceptionsChild: 1,
 				
-				passGrandChild: 5,
-				failGrandChild: 0,
+				passGrandChild: 9,
+				failGrandChild: 1,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
 				skipGrandChild: 0,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 0,
+				exceptionsGrandChild: 1,
 			};
 		</script>
 		
